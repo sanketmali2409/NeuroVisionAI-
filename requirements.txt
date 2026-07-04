@@ -1,0 +1,55 @@
+# --- Backend ---------------------------------------------------------------
+fastapi>=0.111,<1.0
+uvicorn[standard]>=0.30
+pydantic>=2.7
+pydantic-settings>=2.3
+sqlalchemy>=2.0
+python-jose[cryptography]>=3.3
+passlib[bcrypt]>=1.7
+python-multipart>=0.0.9
+
+# --- Frontend ----------------------------------------------------------------
+streamlit>=1.36
+requests>=2.32
+
+# --- Deep learning / computer vision ------------------------------------------
+tensorflow>=2.16
+opencv-python-headless>=4.10
+albumentations>=1.4
+numpy>=1.26
+pandas>=2.2
+scikit-learn>=1.5
+matplotlib>=3.9
+seaborn>=0.13
+Pillow>=10.3
+
+# --- Tabular ML / survival analysis --------------------------------------------
+xgboost>=2.0
+optuna>=3.6
+shap>=0.45
+lifelines>=0.29
+
+# --- Explainable AI ------------------------------------------------------------
+grad-cam>=1.5
+
+# --- RAG -------------------------------------------------------------------------
+langchain>=0.2
+langchain-community>=0.2
+faiss-cpu>=1.8
+sentence-transformers>=3.0
+pymupdf>=1.24
+openai>=1.35
+google-generativeai>=0.7
+
+# --- Report generation -------------------------------------------------------------
+reportlab>=4.2
+jinja2>=3.1
+
+# --- Config / utils -------------------------------------------------------------------
+python-dotenv>=1.0
+pyyaml>=6.0
+
+# --- Testing -------------------------------------------------------------------------
+pytest>=8.2
+pytest-cov>=5.0
+httpx>=0.27

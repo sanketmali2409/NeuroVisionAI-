@@ -1,0 +1,35 @@
+# Environments
+.env
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Data & model artifacts (never commit large binary data)
+datasets/raw/**
+datasets/processed/**
+datasets/splits/**
+!datasets/**/.gitkeep
+models/saved_models/**
+!models/saved_models/**/.gitkeep
+rag/vector_store/**
+!rag/vector_store/.gitkeep
+reports/generated/**
+!reports/generated/.gitkeep
+
+# Database
+*.db
+*.sqlite3
+
+# Logs
+logs/*.log
+
+# Testing / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/

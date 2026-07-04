@@ -1,0 +1,51 @@
+# Non-secret ML / training configuration.
+#
+# Secrets and environment-specific values (API keys, DB URL, ports) live in
+# `.env` / `config/settings.py`. This file holds hyperparameters and
+# experiment configuration that's safe to commit and version-control.
+
+classification:
+  backbone: efficientnet_b0
+  image_size: 224
+  batch_size: 32
+  epochs_frozen: 10 # head-only training with backbone frozen
+  epochs_fine_tune: 20 # full fine-tuning after unfreezing
+  learning_rate_frozen: 0.001
+  learning_rate_fine_tune: 0.00001
+  dropout: 0.3
+  label_smoothing: 0.1
+  early_stopping_patience: 5
+  reduce_lr_patience: 3
+
+segmentation:
+  architecture: unet
+  image_size: 256
+  batch_size: 16
+  epochs: 50
+  learning_rate: 0.0001
+  loss: dice_bce
+  early_stopping_patience: 8
+
+multimodal:
+  image_size: 224
+  batch_size: 32
+  epochs: 30
+  learning_rate: 0.0001
+  tabular_hidden_units: [64, 32]
+  fusion_hidden_units: [128, 64]
+
+prognosis:
+  model: xgboost
+  optuna_trials: 50
+  test_size: 0.2
+  risk_bins: [low, medium, high]
+
+xai:
+  gradcam_layer_name: top_conv # last conv layer of EfficientNetB0
+  shap_background_samples: 50
+
+rag:
+  chunk_size: 800
+  chunk_overlap: 120
+  top_k: 4
+  embedding_model: sentence-transformers/all-MiniLM-L6-v2
