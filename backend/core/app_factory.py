@@ -16,6 +16,9 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from backend.api.routers.health import router as health_router
+from backend.api.routers.explain import router as explain_router
+from backend.api.routers.predict import router as predict_router
+from backend.api.routers.segment import router as segment_router
 from backend.core.exceptions import register_exception_handlers
 from backend.database.session import init_db
 from config.logging_config import get_logger
@@ -68,5 +71,8 @@ def create_app() -> FastAPI:
     # Routers are included with the shared API version prefix so every
     # endpoint is reachable at e.g. /api/v1/health, /api/v1/predict, etc.
     app.include_router(health_router, prefix=settings.API_V1_PREFIX, tags=["Health"])
+    app.include_router(predict_router, prefix=settings.API_V1_PREFIX, tags=["Classification"])
+    app.include_router(segment_router, prefix=settings.API_V1_PREFIX, tags=["Segmentation"])
+    app.include_router(explain_router, prefix=settings.API_V1_PREFIX, tags=["Explainability"])
 
     return app

@@ -7,9 +7,9 @@ placeholder scaffolding. This file tracks order and status.
 | # | Module | Depends on | Status |
 |---|--------|-----------|--------|
 | 0 | Project scaffold, config, logging, DB base, FastAPI/Streamlit skeleton | – | ✅ done |
-| 1 | Classification (EfficientNetB0) — training + inference + `/predict` | 0 | ⬜ next |
-| 2 | Segmentation (U-Net) — training + inference + `/segment` | 0 | ⬜ |
-| 3 | Explainability (Grad-CAM, Grad-CAM++, SHAP) + `/explain` | 1 | ⬜ |
+| 1 | Classification (EfficientNetB0) — training + inference + `/predict` | 0 | ✅ done |
+| 2 | Segmentation (U-Net) — training + inference + `/segment` | 0 | ✅ done |
+| 3 | Explainability (Grad-CAM, Grad-CAM++, SHAP) + `/explain` | 1 | ✅ done |
 | 4 | Auth (JWT, roles, password hashing) | 0 | ⬜ |
 | 5 | Medical report generation (LLM + PDF export) + `/report` | 1, 3 | ⬜ |
 | 6 | Medical RAG (LangChain + FAISS) + `/ask` | 0 | ⬜ |
